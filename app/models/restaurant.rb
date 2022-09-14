@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :foods
+  has_many :foods, dependent: :destroy
   has_many :line_foods, through: :foods
 
   validates :name, :fee, :time_required, presence: true

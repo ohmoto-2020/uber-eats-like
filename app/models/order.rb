@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  has_many :line_foods
+  has_many :line_food, dependent: :destroys
 
   validates :total_price, numericality: { greater_than: 0 }
 
